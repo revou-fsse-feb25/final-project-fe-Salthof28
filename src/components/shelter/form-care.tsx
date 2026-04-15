@@ -179,12 +179,12 @@ export default function FormRentShelter ({ shelter, hiddenForm }: FormCareAnimal
     };
 
     return (
-        <div className="w-[95vw] 2xl:w-[75vw] bg-amber-50 rounded-[1rem] p-[2rem]">
+        <div className="w-[95vw] 2xl:w-[75vw] bg-[#D2B48C] rounded-[1rem] p-[2rem]">
             <Form
                 form={form}
                 layout="vertical"
                 onFinish={onFinish}
-                className="w-full bg-amber-50"
+                className="w-full bg-[#D2B48C]"
                 onValuesChange={calculateTotal}
             >
                 <Button onClick={hiddenForm} type="text" icon={<ArrowLeft />} />
@@ -195,7 +195,7 @@ export default function FormRentShelter ({ shelter, hiddenForm }: FormCareAnimal
                 name="totalLivestock"
                 rules={[{ required: true, message: "Please input total livestock" }]}
                 >
-                <InputNumber defaultValue={1} min={1} />
+                <InputNumber defaultValue={1} min={1} className="!bg-[#947449] [&_.ant-input-number-input]:!text-white [&_.ant-input-number-handler-wrap]:!bg-amber-100" />
                 </Form.Item>
                     {/* Checkbox untuk Treatments */}
                     {shelter?.care_give?.map((treatment, index) => (

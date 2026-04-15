@@ -15,7 +15,7 @@ export default async function ShelterDetailPage ({ params }: AnimalDetailParam) 
     const shelter: ShelterDetailResponse | CustomApiError = await fetchDetailShelter(id);
     const activeIconNav: string = 'shelterdetail'; 
     return (
-        <div className="w-full flex flex-col items-center min-h-screen overflow-x-hidden bg-amber-100">
+        <div className="w-full flex flex-col items-center min-h-screen overflow-x-hidden bg-[#93540D]">
             <Navbar activeIconNav={activeIconNav}/>
             { "data" in shelter ? (
                 <ClientDescriptionShelter shelter={shelter.data} />

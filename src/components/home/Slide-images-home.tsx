@@ -19,7 +19,7 @@ export default function SlideImagesHome({ imageCategory }: SlideImagesHomeProp) 
         }
     }, [])
     return (
-        <section className="flex flex-col w-screen h-screen bg-cover bg-center justify-center items-start px-[2rem] sm:px-[0rem] md:px-[6rem] xl:px-[15rem] 2xl:px-[35rem]" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.6) 80%, rgb(0, 0, 0)), url(${imageCategory[currentImage]})`}}>
+        <section className="flex flex-col w-screen h-screen bg-cover bg-center justify-center items-start px-[2rem] sm:px-[0rem] md:px-[6rem] xl:px-[15rem] 2xl:px-[35rem]" style={{backgroundImage: `linear-gradient(rgba(0,0,0,0.8) 80%, rgb(0, 0, 0)), url(${imageCategory[currentImage]})`}}>
         <p className="text-[#F2FEDC] leading-none font-medium">You need</p>
         <h1 className="leading-none text-[#f2944b] font-bold">Livestock <span className="text-[0.8rem] md:text-[1.5rem] lg:text-[3rem] text-[#00c9ac] font-medium">or care service?</span></h1>
             <div className="flex gap-[2rem]">

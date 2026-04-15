@@ -102,7 +102,7 @@ export default function Carts() {
     }
 
     return (
-        <div className="w-full bg-amber-100 flex flex-col items-center min-h-screen overflow-x-hidden">
+        <div className="w-full bg-[#93540D] flex flex-col items-center min-h-screen overflow-x-hidden">
             <Suspense fallback={<div>Loading...</div>}>
                 <Navbar activeIconNav={activeIconNav} />
             </Suspense>
@@ -111,7 +111,7 @@ export default function Carts() {
             <main className="flex flex-col items-center gap-6 text-black w-full px-6 py-4">
                 {/* empty cart */}
                 {(cart.buy.length < 1 && cart.care.length < 1) && (
-                    <div className="flex flex-col items-center gap-4 w-[95vw] md:w-[75vw] bg-amber-50 shadow-lg ring-[0.1rem] ring-black/5 p-8 rounded-xl justify-center">
+                    <div className="flex flex-col items-center gap-4 w-[95vw] md:w-[75vw] bg-[#D2B48C] shadow-lg ring-[0.1rem] ring-black/5 p-8 rounded-xl justify-center">
                         <h4 className="text-lg font-semibold text-center">
                             {`Your cart is empty. Let's fill it up with something awesome!`}
                         </h4>

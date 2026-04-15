@@ -15,51 +15,52 @@ export default function ClientDescriptionAnimal ({ livestock }: DescriptionAnima
         setShowForm(true);
     }
     return (
-        <main className="flex flex-col items-center mt-[6rem] lg:mt-[12rem] gap-[2rem] text-black">
-            {/* description section */}
-            <section className="flex flex-col max-lg:items-center lg:flex-row gap-[2rem] xl:gap-[4rem] 2xl:gap-[6rem] w-[95vw] 2xl:w-[75vw] bg-amber-50 shadow-lg/30 ring-[0.1rem] ring-black/5 p-[2rem] rounded-[1rem]">
+        <main className="flex flex-col lg:flex-row mt-[6rem] lg:mt-[12rem] gap-[clamp(1rem,1.3vw,2rem)] text-[#2D2D2D]">
+            {/* specification section */}
+            <section className="flex flex-col max-lg:items-center lg:flex-col gap-[clamp(2rem,3.8vw,6rem)] w-[80vw] lg:w-[35vw] bg-[#D2B48C] shadow-lg/30 ring-[0.1rem] ring-black/5 p-[clamp(0.8rem,1.3vw,2rem)] rounded-[1rem] items-center">
                 {/* image */}
                 <SlideImageAnimal images={livestock.img_livestock} />
                 {/* description */}
-                <div className="lg:w-[60%]">
-                    <h3 className="font-bold max-lg:text-center">{livestock?.name}</h3>
-                    <h4 className="mb-[2rem] max-lg:text-center">Category: {livestock?.category?.name}</h4>
-                    <h5 className="text-justify">{livestock?.description}</h5>
-                    <hr className="border-[0.15rem] my-[0.5rem]"></hr>
-                    <h5>Farm: {livestock?.farm.name}</h5>
-                    <h5>{livestock?.farm.location}</h5>
-                    <hr className="border-[0.15rem] my-[0.5rem]"></hr>
-                    <h5>Stock: {livestock?.stock} Heads</h5>
-                    <div className="flex flex-row mt-[1rem] justify-center gap-[2rem]">
-                        <button onClick={handleBtnBuy} className="font-bold btn w-[8rem] bg-emerald-500 hover:bg-emerald-700 hover:text-white xl:1rem text-[1.5rem] transition-opacity delay-200 active:scale-90">Buy</button>
-                        <button className="bg-emerald-500 hover:bg-emerald-700 hover:text-white xl:1rem rounded-[0.5rem] transition-opacity delay-200 active:scale-90"><MessageSquareText className="w-[4rem]" /></button>
-                    </div>
-                </div>
-            </section>
-            {/* specification section */}
-            <section className="w-[95vw] 2xl:w-[75vw] bg-amber-50 shadow-lg/30 ring-[0.1rem] ring-black/5 p-[2rem] px-[1.5rem] md:px-[3rem] xl:px-[8rem] rounded-[1rem] items-center">
-                <h3 className="text-center mb-[2rem] font-bold">Spesification for {livestock?.name}</h3>
-                <table className="min-w-full ">
-                    <tbody className="bg-white/30">
+                <table className="w-fit text-[clamp(0.5rem,1vw,0.8rem)] md:text-[clamp(0.8rem,1vw,1.5rem)]">
+                    <tbody>
                         {/* w-[88%] 2xl: */}
-                        <tr className="border-t border-gray-500/15">
-                            <td className="tds w-[75%] md:w-[85%] ">Age</td>
-                            <td className="tds">{livestock?.age} Years</td>
+                        <tr>
+                            <td className="w-[75%] md:w-[80%] font-bold">Spesification</td>
+                            <td className="font-bold">Detail</td>
                         </tr>
-                        <tr className="border-t border-gray-500/15">
-                            <td className="tds w-[75%] md:w-[85%] ">Category</td>
-                            <td className="tds">{livestock?.category?.name}</td>
+                        <tr>
+                            <td className="w-[75%] md:w-[80%]">Age</td>
+                            <td>{livestock?.age} Years</td>
                         </tr>
-                        <tr className="border-t border-gray-500/15">
-                            <td className="tds w-[75%] md:w-[85%] ">Type</td>
-                            <td className="tds">{livestock?.name}</td>
+                        <tr>
+                            <td className="w-[75%] md:w-[80%] ">Category</td>
+                            <td>{livestock?.category?.name}</td>
                         </tr>
-                        <tr className="border-t border-gray-500/15">
-                            <td className="tds w-[75%] md:w-[85%] ">Gender</td>
-                            <td className="tds">Male</td>
+                        <tr>
+                            <td className="w-[75%] md:w-[80%] ">Type</td>
+                            <td>{livestock?.name}</td>
+                        </tr>
+                        <tr>
+                            <td className="w-[75%] md:w-[80%] ">Gender</td>
+                            <td>Male</td>
                         </tr>
                     </tbody>
                 </table>
+            </section>
+            {/* description section */}
+            <section className="w-[80vw] lg:w-[35vw] bg-[#D2B48C] shadow-lg/30 ring-[0.1rem] ring-black/5 p-[clamp(1rem,1.3vw,2rem)] rounded-[1rem] items-center h-fit">
+                <div>
+                    <p className="text-[#5C3A19] font-bold !text-[clamp(0.6rem,0.7vw,1rem)]">Category: {livestock?.category?.name}</p>
+                    <h3 className="font-bold text-[#5C3A19] -mt-[clamp(0.6rem,0.5vw,0.8rem)] !text-[clamp(1.5rem,1.9vw,3rem)]">{livestock?.name}</h3>
+                    <h5 className="font-bold text-white mb-[clamp(0rem,0.7vw,1rem)] py-1 px-[1rem] bg-black w-fit items-center rounded-[2rem] !text-[clamp(0.6rem,0.7vw,1.1rem)]">Rp {new Intl.NumberFormat('id-ID').format(livestock?.price)}</h5>
+                    <h5 className="text-justify mb-[clamp(0.4rem,1.3vw,2rem)] !text-[clamp(0.6rem,0.7vw,1.1rem)]">{livestock?.description}</h5>
+                    <h5 className="!text-[clamp(0.6rem,0.7vw,1.1rem)]">Farm: {livestock?.farm.name}</h5>
+                    <h5 className="mb-[clamp(0rem,1.3vw,2rem)] !text-[clamp(0.6rem,0.7vw,1.1rem)]">{livestock?.farm.location}</h5>
+                    <div className="flex flex-row mt-[1rem] justify-center">
+                        <button onClick={handleBtnBuy} className="font-bold w-[clamp(4rem,5vw,8rem)] bg-[#3E5622] hover:bg-[#E3B704] hover:text-black text-[clamp(0.8rem,1vw,1.5rem)] transition-opacity delay-200 active:scale-90 text-white shadow-lg/20 ring-[0.1rem] ring-black/5 rounded-[clamp(0.3rem,0.4vw,0.6rem)]">Buy</button>
+                        {/* <button className="bg-emerald-500 hover:bg-emerald-700 hover:text-white xl:1rem rounded-[0.5rem] transition-opacity delay-200 active:scale-90"><MessageSquareText className="w-[4rem]" /></button> */}
+                    </div>
+                </div>
             </section>
             {/* section form */}
             {showForm === true && (

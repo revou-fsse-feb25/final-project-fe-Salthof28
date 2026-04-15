@@ -15,7 +15,7 @@ export default async function AnimalDetailPage ({ params }: AnimalDetailParam) {
     const livestock: LivestockDetailResponse | CustomApiError = await fetchDetailLivestock(id);
     const activeIconNav: string = 'animaldetail'; 
     return (
-        <div className="w-full flex flex-col items-center min-h-screen overflow-x-hidden bg-amber-100">
+        <div className="w-full flex flex-col items-center min-h-screen overflow-x-hidden bg-[#93540D]">
             <Navbar activeIconNav={activeIconNav}/>
             { "data" in livestock ? (
                 <ClientDescriptionAnimal livestock={livestock.data} />

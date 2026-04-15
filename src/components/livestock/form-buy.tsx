@@ -231,12 +231,12 @@ const dateMap: Record<string, number> = {};
     };
 
     return (
-        <div className="w-[95vw] 2xl:w-[75vw] bg-amber-50 rounded-[1rem] p-[2rem]">
+        <div className="w-[95vw] 2xl:w-[75vw] bg-[#D2B48C] rounded-[1rem] p-[2rem]">
             <Form
                 form={form}
                 layout="vertical"
                 onFinish={onFinish}
-                className="w-full bg-amber-50"
+                className="w-full bg-[#D2B48C]"
                 onValuesChange={calculateTotal}
             >
                 <Button onClick={hiddenForm} type="text" icon={<ArrowLeft />} />
@@ -247,7 +247,7 @@ const dateMap: Record<string, number> = {};
                 name="wantCare"
                 rules={[{ required: true, message: "Please select an option" }]}
                 >
-                <Select placeholder="Select yes or no">
+                <Select placeholder="Select yes or no" className="[&_.ant-select-selector]:!bg-[#947449] [&_.ant-select-selector]:!rounded-xl [&_.ant-select-selector]:!border-none w-full [&_.ant-select-selection-item]:!text-white">
                     <Option value="yes">Yes</Option>
                     <Option value="no">No</Option>
                 </Select>
@@ -258,7 +258,7 @@ const dateMap: Record<string, number> = {};
                 name="totalLivestock"
                 rules={[{ required: true, message: "Please input total livestock" }]}
                 >
-                <InputNumber defaultValue={1} min={1} max={animal.stock} />
+                <InputNumber defaultValue={1} min={1} max={animal.stock} className="!bg-[#947449] [&_.ant-input-number-input]:!text-white [&_.ant-input-number-handler-wrap]:!bg-amber-100"/>
                 </Form.Item>
 
                 {/* Form Care */}
@@ -326,7 +326,7 @@ const dateMap: Record<string, number> = {};
                 name="address"
                 rules={[{ required: true, message: "Please input your address" }]}
                 >
-                <Input.TextArea placeholder="Enter your full address" rows={3} />
+                <Input.TextArea placeholder="Enter your full address" rows={3} className="!bg-[#947449] !text-white" />
                 </Form.Item>
                 <Form.Item>
                     <h5>Rp {totalPrice}</h5>
