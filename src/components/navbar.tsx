@@ -70,20 +70,20 @@ export default function Navbar({ activeIconNav }: NavbarProp) {
     }, [])
     return(
         <div className="flex justify-center">
-            <header className={`w-[98vw] flex flex-col lg:h-fit max-lg:bg-[#3C2700] text-white mt-[1rem] p-[0.5rem] items-center rounded-[1rem] duration-500 fixed overflow-hidden ${show ? "translate-y-0" : "-translate-y-full"} transition-all duration-300 ease-in-out ${menu ? 'h-[23rem]' : 'h-[2.5rem]'} z-50`}>
-                <div className="w-full flex flex-col lg:flex-row justify-between lg:h-fit lg:gap-[2rem] gap-[1rem] items-center">
-                    <div className="w-full flex justify-between items-center lg:w-auto">
-                        <img src='/smafarm-logo.png' className="w-[2rem] lg:w-[8rem]" />
+            <header className={`w-[98vw] flex flex-col lg:h-fit max-lg:bg-[#3C2700] text-white mt-[1rem] p-[0.5rem] items-center rounded-[1rem] duration-500 fixed overflow-hidden ${show ? "translate-y-0" : "-translate-y-full"} transition-all duration-300 ease-in-out ${menu ? 'h-fit' : 'h-[2.5rem]'} z-50`}>
+                <div className="w-full flex flex-col lg:flex-row justify-center lg:h-fit lg:gap-[2rem] gap-[1rem] items-center relative">
+                    <div className="w-full flex flex-row items-center justify-center lg:w-auto">
+                        <img src='/smafarm-logo.png' className="w-[2rem] lg:w-[6rem] absolute left-0 top-0 lg:top-[1.3em]" />
                         {(activeIconNav === 'animal' || activeIconNav === 'shelter') && (
                         <form className="lg:hidden flex flex-row" onSubmit={handleInptSearch}>
                             <input data-testid='inptSearch' onChange={getInputSearch} className="text-center bg-white/40 rounded-md hover:bg-emerald-500 p-[0.1rem] text-[0.8rem] text-white" placeholder="Search" ></input>
                             <button type="submit" data-testid="btnSearch" className="font-bold ml-2 bg-[#93540D] p-1 rounded-md hover:bg-emerald-700 hover:text-amber-50 transition-opacity active:scale-90 duration-200 text-[0.6rem]">Search</button>   
                         </form>
                         )}
-                        <button onClick={() => setMenu(!menu)} className="lg:hidden w-auto">{menu ? <X /> : <AlignJustify />}</button>
+                        <button onClick={() => setMenu(!menu)} className="lg:hidden w-auto absolute right-0 top-0">{menu ? <X /> : <AlignJustify />}</button>
                     </div>
                     <nav className={` flex-col flex items-center bg-[#3C2700] py-[1rem] px-[1rem] rounded-[1rem]`}>
-                        <div className={`flex-col lg:flex-row flex lg:gap-[1rem] gap-[1rem]`}>
+                        <div className={`flex-row lg:flex-row flex lg:gap-[1rem] gap-[clamp(0.5rem,2.1vw,1rem)]`}>
                             <Link href='/' className={`flex flex-col items-center text-[0.6rem] lg:text-[0.8rem] ${activeIconNav === 'home' ? 'text-black bg-[#E3B704] rounded-[1rem]' : 'text-[#F2FEDC]'} px-4 py-1`}><Home className="w-[2rem] h-[2rem] lg:w-[2.5rem] lg:h-[2.5rem]"/>Home</Link>
                             <Link href='/livestock' className={`flex flex-col items-center text-[0.6rem] lg:text-[0.8rem] ${(activeIconNav === 'animal' || activeIconNav === 'animaldetail') ? 'text-black bg-[#E3B704] rounded-[1rem]' : 'text-[#F2FEDC]'} px-1.5 py-1`}><Rabbit className="w-[2rem] h-[2rem] lg:w-[2.5rem] lg:h-[2.5rem]"/>Livestocks</Link>
                             <Link href='/login' className={`flex flex-col items-center text-[0.6rem] lg:text-[0.8rem] ${activeIconNav === 'login' ? 'text-black bg-[#E3B704] rounded-[1rem]' : 'text-[#F2FEDC]'} px-4 py-1`}>
@@ -111,7 +111,7 @@ export default function Navbar({ activeIconNav }: NavbarProp) {
                             </form>
                         )}
                     </nav>
-                    <button className="font-bold ml-2 bg-[#A09218] hover:bg-[#918300] p-2 text-[0.8rem] 2xl:text-[1rem] rounded-lg shadow-lg/20 ring-[0.1rem] ring-black/5">about Smafarm</button>   
+                    <button className="font-bold ml-2 bg-[#A09218] hover:bg-[#918300] p-2 text-[0.8rem] 2xl:text-[1rem] rounded-lg shadow-lg/20 ring-[0.1rem] ring-black/5 absolute right-0 top-[1.8em] hidden">about Smafarm</button>   
                 </div>
             </header>
             
